@@ -1,0 +1,52 @@
+body {
+  background-color: rgb(9, 16, 39);
+  color: #ffffff;
+}
+
+.meniu{
+    overflow: hidden; /*ca sa nu se suprapuna*/
+}
+
+.tools{
+    overflow: hidden;
+}
+
+/* Pentru itemurile din meniu: sa se afiseze una langa alta */
+.meniu_item {
+  float: left;
+  text-align: center;
+  padding: 10px 10px;
+}
+
+/* Cand se selecteaza un item: */
+.meniu_item:hover {
+  background-color: rgb(0, 11, 158);
+}
+
+/* Meniu tip dropdown -ascuns pana se da hover peste un item */
+.meniu_list {
+    display: none;
+    position: absolute;
+    background-color:  rgb(213, 215, 238);
+}
+
+/* Cand se pozitioneaza mouse-ul pe un item, se afiseaza lista aferenta itemului*/
+.meniu_item:hover .meniu_list {
+    display: block;
+}
+
+/* Deoarece sunt div-uri, cursorul este default text, il transformam in pointer */
+.meniu_titlu, .meniu_list div{
+    cursor: pointer;
+}
+
+/* Stiluri pentru itemurile din lista si pt hover peste ele*/
+.meniu_list div {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    text-align: left;
+}
+.meniu_list div:hover{
+    background-color: rgb(188, 192, 253) ;
+}

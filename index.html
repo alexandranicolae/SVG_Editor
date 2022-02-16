@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SGV Editor</title>
+    <script src="6_1083_NICOLAE_FLORENTINA_ALEXANDRA.js"></script>
+    
+    <!-- Libraria folosita la stergere(undo) -->
+    <!-- <script src = "https://d3js.org/d3.v4.min.js"></script>   -->
+
+    <link rel="stylesheet" type="text/css" href="6_1083_NICOLAE_FLORENTINA_ALEXANDRA.css">
+
+</head>
+
+<body>
+
+    <!-- Meniu -->
+    <div class="meniu">
+        <div class="meniu_item">
+            <div class="meniu_titlu">File</div>
+            <div class="meniu_list" id="meniu_file">
+                <div id="mn_newFile">New file</div>
+                <div id="mn_saveSvg">Save as SVG</div>
+                <div id="mn_saveRaster">Save as png/jpeg</div>
+            </div>
+        </div>
+        <div class="meniu_item">
+            <div class="meniu_titlu">Edit</div>
+            <div class="meniu_list" id="meniu_edit">
+                <div id="mn_undo">Undo (ctrl+r)</div>
+            </div>
+        </div>
+    </div>
+    <!-- Bara tools: -->
+    <div class="tools">
+
+        <span class="forme" style="padding: 18%;">
+            <button id="btnSelectie">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-cursor-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z" />
+                </svg>
+            </button>
+
+            <button id="btnCreion">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5L13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175l-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                </svg>
+            </button>
+
+            <button id="btnLinie">
+                <svg width="16" height="16">
+                    <line x1="0" y1="16" x2="16" y2="0" style="stroke:rgb(0, 0, 0);stroke-width:2" />
+                </svg>
+            </button>
+
+            <button id="btnDreptunghi">
+                <svg width="16" height="16">
+                    <rect x="1" y="4" width="14" height="10" style="fill:#00000000;stroke-width:2;stroke:rgb(0,0,0)">
+                    </rect>
+                </svg>
+            </button>
+
+            <button id="btnElipsa">
+                <svg width="16" height="16">
+                    <ellipse cx="8" cy="9" rx="7" ry="5" style="fill:#00000000;stroke:rgb(0, 0, 0);stroke-width:2" />
+                </svg>
+            </button>
+        </span>
+
+        <span class="proprietati" style="padding: 2%;">
+            <!-- aceste "type=color" nu sunt suportate de Internet Explorer 11, Safari 9.1 sau mai vechi -->
+            <label for="clrFill">Background:</label>
+            <input type="color" id="clrFill" name="favcolor" value="#ffffff">
+            <label for="clrStroke">Stroke:</label>
+            <input type="color" id="clrStroke" name="favcolor" value="#000000">
+
+            <label for="strokeValue">Stroke Value:</label>
+            <input width="16" height="16" type="number" id="strokeValue" min="0" value="1" style="height: 25px;width: 40px;">
+        </span>
+
+    </div>
+
+    <div id="svgArtboard" style="background-color:#ffffff; margin-left: auto; margin-right: auto;width: 800px;height: 500px;">
+        <!-- Plansa pe care se va face desenarea -->
+        <svg id="artboard" width="800" height="500">
+        </svg>
+    </div>
+
+    <script>
+        "use strict";
+        app.load();
+    </script>
+</body>
+
+</html>
